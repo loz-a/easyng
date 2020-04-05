@@ -2,6 +2,7 @@ ARG PHP_VERSION
 FROM php:${PHP_VERSION}-apache
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
+#ENV COMPOSER_ALLOW_XDEBUG 1
 
 ARG USER_ID
 ARG GROUP_ID
@@ -54,7 +55,7 @@ RUN apt-get update \
     && rm -rf /root/gocode
 
 # workdir
-WORKDIR "$PROJECT_WORK_DIR"
+WORKDIR "$PROJECT_WORK_DIR/$APP_DIR_NAME"
 
 RUN /tmp/scripts/cleanup.sh
 
