@@ -16,6 +16,11 @@ class Autoloader
         'AppAoT\\Generated\\Factory\\App\\Handler\\PingHandlerFactory' => 'Factory/App/Handler/PingHandlerFactory.php',
         'AppAoT\\Generated\\Factory\\App\\Handler\\HomePageHandlerFactory' => 'Factory/App/Handler/HomePageHandlerFactory.php',
         'AppAoT\\Generated\\Factory\\App\\ConfigProviderFactory' => 'Factory/App/ConfigProviderFactory.php',
+        'AppAoT\\Generated\\Factory\\Easy\\Admin\\Dashboard\\Handler\\IndexHandlerFactory' => 'Factory/Easy/Admin/Dashboard/Handler/IndexHandlerFactory.php',
+        'AppAoT\\Generated\\Factory\\Easy\\Admin\\Dashboard\\ConfigProviderFactory' => 'Factory/Easy/Admin/Dashboard/ConfigProviderFactory.php',
+        'AppAoT\\Generated\\Factory\\Easy\\Admin\\Dashboard\\Responder\\IndexResponderFactory' => 'Factory/Easy/Admin/Dashboard/Responder/IndexResponderFactory.php',
+        'AppAoT\\Generated\\Factory\\Easy\\Admin\\Admin\\ConfigProviderFactory' => 'Factory/Easy/Admin/Admin/ConfigProviderFactory.php',
+        'AppAoT\\Generated\\Factory\\Easy\\Admin\\Admin\\TemplateRenderer\\AdminTemplateRendererInterfaceFactory' => 'Factory/Easy/Admin/Admin/TemplateRenderer/AdminTemplateRendererInterfaceFactory.php',
         'AppAoT\\Generated\\GeneratedInjector' => 'GeneratedInjector.php',
     ];
 

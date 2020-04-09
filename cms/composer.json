@@ -70,7 +70,9 @@
         "psr-4": {
             "AppTest\\": "test/AppTest/",
             "AppAoT\\": "src/AppAoT/src/",
-            "AppAoT\\Generated\\": "src/AppAoT/gen/"
+            "AppAoT\\Generated\\": "src/AppAoT/gen/",
+            "Easy\\Admin\\Admin\\": "src/Easy/Admin/Admin/src",
+            "Easy\\Admin\\Dashboard\\": "src/Easy/Admin/Dashboard/src"
         }
     },
     "scripts": {

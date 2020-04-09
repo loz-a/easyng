@@ -1,0 +1,151 @@
+<?php
+//    use AdminDashboard\Config\DashboardRoutesInterface as DashboardRoutes;
+//    use User\Config\UserRoutesInterface as UserRoutes;
+//    use Auth\Config\AuthRoutesInterface as AuthRoutes;
+//    use MultilangsManager\Config\MultilangsManagerRoutesInterface as MultilangsManagerRoutes;
+//    use Easy\Config\Admin\Application\Routes\ConfigRoutesInterface as ConfigRoutes;
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?= $this->headTitle('Admin') ?>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <!--    <link rel="shortcut icon" href="">-->
+
+    <?= $this->headMeta(); ?>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <?= $this->headLink(); ?>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
+    <?= $this->headScript(); ?>
+
+<!--    <style type="text/css">-->
+<!--        body > .grid { height: 100%; }-->
+<!--        .column { max-width: 470px; }-->
+<!--    </style>-->
+
+</head>
+
+<body>
+    <div id="main-menu-sidebar" class="ui inverted labeled icon left inline vertical sidebar menu">
+<!--        <a class="item" href="--><?//= $this->url(DashboardRoutes::DASHBOARD_ROUTE) ?><!--">-->
+        <a class="item" href="/">
+            <i class="tachometer alternate icon"></i>
+            Dashboard
+        </a>
+        <a class="item">
+            <i class="file alternate outline icon"></i>
+            Pages
+        </a>
+        <a class="item">
+            <i class="sitemap icon"></i>
+            Navigations
+        </a>
+<!--        <a class="item" href="--><?//= $this->url(MultilangsManagerRoutes::INDEX_ROUTE) ?><!--">-->
+        <a class="item" href="/">
+            <i class="globe icon"></i>
+            Locales
+        </a>
+        <a class="item">
+            <i class="language icon"></i>
+            Translations
+        </a>
+    </div>
+
+
+    <div class="ui top attached menu">
+        <a id="main-menu-toggler" class="item">
+            <i class="sidebar icon"></i>
+            Main Menu
+        </a>
+
+        <div class="ui dropdown item">
+            <i class="list alternate outline icon"></i>
+            Module Menu
+            <i class="dropdown icon"></i>
+            <div class="menu" id="app-module-actions">
+            </div>
+        </div>
+
+<!--        <a class="item" href="--><?//= $this->url(ConfigRoutes::INDEX_ROUTE) ?><!--">-->
+        <a class="item" href="/">
+            <i class="cogs icon"></i>
+            Configuration
+        </a>
+
+        <div class="item" id="app-breadcrumbs">
+        </div>
+
+        <div class="right menu">
+
+            <div class="ui right aligned category search item">
+                <div class="ui transparent icon input">
+                    <input class="prompt" type="text" placeholder="Search...">
+                    <i class="search link icon"></i>
+                </div>
+                <div class="results"></div>
+            </div>
+
+<!--            <a href="--><?//= $this->url('home') ?><!--" class="item">-->
+            <a href="/" class="item">
+                <i class="home icon"></i>
+            </a>
+
+            <div class="ui dropdown icon item">
+                <i class="user circle icon"></i> <i class="dropdown icon"></i>
+                <div class="menu">
+                    <div class="item">
+                        <i class="cog icon"></i> User settings
+                    </div>
+                    <div class="item">
+<!--                        <a href="--><?//= $this->url(UserRoutes::CHANGE_PASSWORD_ROUTE) ?><!--">-->
+                        <a href="/">
+                            <i class="user secret icon"></i> Change Password
+                        </a>
+                    </div>
+                    <div class="divider"></div>
+<!--                    <a href="--><?//= $this->url(AuthRoutes::LOGOUT_ROUTE) ?><!--" class="item">-->
+                    <a href="/" class="item">
+                        <i class="sign out icon"></i> Log out
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui bottom attached segment content-container">
+<!--        --><?php //if (false && isset($flashMessages)): ?>
+<!--        <div class="ui stackable two column centered grid">-->
+<!--            <div class="column">-->
+<!--            --><?//= $this->flashMessages($flashMessages) ?>
+<!--            </div>-->
+<!--        </div>-->
+<!--        --><?php //endif ?>
+
+        <?= $this->content ?>
+
+    </div>
+
+    <div id="app-module-flash-messages" class="flash-messages"></div>
+
+<script>
+
+    $('#main-menu-sidebar')
+        .sidebar('attach events', '#main-menu-toggler')
+        .sidebar('setting', 'transition', 'overlay');
+
+    $('.ui.dropdown').dropdown();
+
+</script>
+
+<?= $this->inlineScript() ?>
+</body>
+</html>
