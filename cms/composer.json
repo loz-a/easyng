@@ -71,6 +71,7 @@
             "AppTest\\": "test/AppTest/",
             "AppAoT\\": "src/AppAoT/src/",
             "AppAoT\\Generated\\": "src/AppAoT/gen/",
+            "Easy\\Core\\": "src/Easy/Core/src",
             "Easy\\Admin\\Admin\\": "src/Easy/Admin/Admin/src",
             "Easy\\Admin\\Dashboard\\": "src/Easy/Admin/Dashboard/src"
         }

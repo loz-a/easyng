@@ -32,6 +32,7 @@ $aggregator = new ConfigAggregator([
 
     // Default App module config
     App\ConfigProvider::class,
+    Easy\Core\ConfigProvider::class,
     Easy\Admin\Admin\ConfigProvider::class,
     Easy\Admin\Dashboard\ConfigProvider::class,
 

@@ -18,6 +18,9 @@ class PingHandler implements RequestHandlerInterface
 {
     public function handle(ServerRequestInterface $request) : ResponseInterface
     {
+
+        //https://docs.laminas.dev/laminas-di/config/
+
         $directories = [
             getcwd() . '/src/App/src',
             getcwd() . '/src/Easy/Admin/Dashboard/src',

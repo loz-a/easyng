@@ -19,14 +19,20 @@ class ConfigProvider
         return [
             'auto' => [
                 'types' => [
-                    TemplateRenderer\AdminTemplateRendererInterface::class => [
+                    TemplateRenderer\AdminTemplateRendererInterface::DI_ALIAS => [
                         'typeOf' => \Mezzio\LaminasView\LaminasViewRenderer::class,
+                        'preferences' => [
+                            \Laminas\View\Renderer\RendererInterface::class => \Laminas\View\Renderer\PhpRenderer::class,
+                        ],
                         'parameters' => [
                             'layout' => 'admin::layout',
                         ]
                     ]
                 ]
-            ]
+            ],
+            'factories' => [
+                TemplateRenderer\AdminTemplateRendererInterface::class => TemplateRenderer\AdminTemplateRendererFactory::class,
+            ],
         ];
     }
 

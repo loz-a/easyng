@@ -4,8 +4,7 @@
  * Generated autoload file for Laminas\Di
  */
 
-namespace AppAoT\Generated;
-
+%namespace%
 require_once __DIR__ . '/Autoloader.php';
 
 return (function(): Autoloader {
