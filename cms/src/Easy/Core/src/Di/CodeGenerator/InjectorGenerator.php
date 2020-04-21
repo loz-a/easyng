@@ -189,12 +189,12 @@ class InjectorGenerator
         $this->autoloadGenerator->setOutputDirectory($this->outputDirectory);
         $factories = [];
 
-        foreach ($classes as $class) {
-            $this->generateTypeFactory((string)$class, $factories);
-        }
-
         foreach ($this->config->getConfiguredTypeNames() as $type) {
             $this->generateTypeFactory($type, $factories);
+        }
+
+        foreach ($classes as $class) {
+            $this->generateTypeFactory((string)$class, $factories);
         }
 
         $this->generateAutoload();

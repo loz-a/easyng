@@ -22,8 +22,7 @@ class ConfigProvider
     public function __invoke() : array
     {
         return [
-            'dependencies' => $this->getDependencies(),
-            'templates'    => $this->getTemplates(),
+            'dependencies' => $this->getDependencies()
         ];
     }
 
@@ -46,18 +45,6 @@ class ConfigProvider
                 InjectorInterface::class => [
                     InjectorDecoratorFactory::class,
                 ],
-            ],
-        ];
-    }
-
-    /**
-     * Returns the templates configuration
-     */
-    public function getTemplates() : array
-    {
-        return [
-            'paths' => [
-                'app-ao-t'    => [__DIR__ . '/../templates/'],
             ],
         ];
     }

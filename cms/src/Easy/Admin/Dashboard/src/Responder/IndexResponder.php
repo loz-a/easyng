@@ -4,27 +4,26 @@ declare(strict_types=1);
 
 namespace Easy\Admin\Dashboard\Responder;
 
-use Easy\Admin\Admin\TemplateRenderer\AdminTemplateRendererFactory;
+use Easy\Admin\Admin\TemplateRenderer\Factory as TemplateRendererFactory;
 use Laminas\Diactoros\Response\HtmlResponse;
-use Mezzio\Template\TemplateRendererInterface;
 use Psr\Http\Message\ResponseInterface;
-use Easy\Admin\Admin\TemplateRenderer\AdminTemplateRendererInterface;
 
 final class IndexResponder
 {
     public const TEMPLATE_NAME = 'admin-dashboard::index';
 
-    private AdminTemplateRendererFactory $templateFactory;
+    private TemplateRendererFactory $templateRendererFactory;
 
     public function __construct(
-        AdminTemplateRendererFactory $adminTemplateRendererFactory
+        TemplateRendererFactory $templateRendererFactory
     ){
-        $this->templateFactory = $adminTemplateRendererFactory;
+        $this->templateRendererFactory = $templateRendererFactory;
     }
 
     public function createResponse(): ResponseInterface
     {
-        $html = $this->template->render(self::TEMPLATE_NAME);
+        $renderer = $this->templateRendererFactory->create();
+        $html = $renderer->render(self::TEMPLATE_NAME);
         return new HtmlResponse($html);
     }
 }
