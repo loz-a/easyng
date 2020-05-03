@@ -25,7 +25,6 @@ class FactoryGenerator
 
     private const INDENTATION_SPACES = 4;
     private const TEMPLATE_FILE = __DIR__ . '/../../templates/factory.template';
-    private const TEMPLATE_NEWABLE_FILE = __DIR__ . '/../../templates/newable-factory.template';
     private const PARAMETERS_TEMPLATE = <<< '__CODE__'
 
         $args = empty($options)
@@ -172,43 +171,6 @@ __CODE__;
     public function generate(string $class): string
     {
         $className = $this->getClassName($class);
-
-//        $classConstructor = (new \ReflectionClass($className))->getConstructor();
-//        if (null !== $classConstructor) {
-//            $constructorParams = $classConstructor->getParameters();
-//        }
-//        foreach ($constructorParams as $reflectionParameter) {
-//            if ($reflectionParameter->hasType()) {
-//                $paramType = $reflectionParameter->getType()->getName();
-//                $factoryPostfix = 'Factory';
-//                $isFactory = substr_compare($paramType, $factoryPostfix, -strlen($factoryPostfix)) === 0;
-//
-//                if ($isFactory && !class_exists($paramType)) {
-//                    $targetTypeName = substr($paramType, 0, -strlen($factoryPostfix));
-//                    $factoryClassName = $this->namespace . '\\' . $this->buildClassName($targetTypeName);
-//                    list($namespace, $unqualifiedFactoryClassName) = $this->splitFullyQualifiedClassName($factoryClassName);
-//
-//                    $filename = $this->buildFileName($targetTypeName);
-//                    $filepath = $this->outputDirectory . '/' . $filename;
-//
-//                    $code = strtr(
-//                        file_get_contents(self::TEMPLATE_NEWABLE_FILE),
-//                        [
-//                            '%namespace%' => $namespace ? "namespace $namespace;\n" : '',
-//                            '%className%' => $unqualifiedFactoryClassName,
-//                            '%class%' => str_replace('\\', '\\\\', substr($paramType, 0, -strlen($factoryPostfix))),
-//                        ]
-//                    );
-//
-//                    $this->ensureDirectory(dirname($filepath));
-//
-//                    $output = new SplFileObject($filepath, 'w');
-//                    $output->fwrite($code);
-//                    $this->classmap[$factoryClassName] = $filename;
-//                }
-//            }
-//        }
-
         $injections = $this->resolver->resolveParameters($class);
 
         if (! $this->canGenerateForParameters($injections)) {
