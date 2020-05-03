@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Easy\Admin\Dashboard\Handler;
+namespace Easy\Config\Admin\Infrastructure\Handler;
 
-use Easy\Admin\Dashboard\Responder\IndexResponder;
+use Easy\Config\Admin\Presentation\Responder\IndexResponder;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
 final class IndexHandler implements RequestHandlerInterface
 {
-    public const ROUTE_NAME = 'admin.dashboard.index';
+    public const ROUTE_NAME = 'admin.config.index';
 
     private IndexResponder $responder;
 
@@ -24,5 +24,4 @@ final class IndexHandler implements RequestHandlerInterface
     {
         return $this->responder->createResponse();
     }
-
 }

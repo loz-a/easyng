@@ -35,5 +35,6 @@ use Psr\Container\ContainerInterface;
 return static function (Application $app, MiddlewareFactory $factory, ContainerInterface $container) : void {
     $app->get('/', App\Handler\HomePageHandler::class, 'home');
     $app->get('/api/ping', App\Handler\PingHandler::class, 'api.ping');
-    $app->get('/admin/dashboard', Easy\Admin\Dashboard\Handler\IndexHandler::class);
+    $app->get('/admin/dashboard', \Easy\Admin\Dashboard\Handler\IndexHandler::class, \Easy\Admin\Dashboard\Handler\IndexHandler::ROUTE_NAME);
+    $app->get('/admin/config', \Easy\Config\Admin\Infrastructure\Handler\IndexHandler::class, \Easy\Config\Admin\Infrastructure\Handler\IndexHandler::ROUTE_NAME);
 };
