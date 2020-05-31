@@ -26,6 +26,7 @@ return [
     'di_generate' => [
         'scan_directories' => [
             __DIR__ . '/../../src/App/src',
+//            __DIR__ . '/../../src/Easy/Core/src',
             __DIR__ . '/../../src/Easy/Admin/Dashboard/src',
             __DIR__ . '/../../src/Easy/Admin/Admin/src',
             __DIR__ . '/../../src/Easy/Config/Admin/src',

@@ -1,0 +1,39 @@
+
+.table td.flag-icon-box,
+.table th.flag-icon-box {
+    text-align: center;
+    vertical-align: middle;
+    width: 30px;
+}
+
+.table td a {
+    margin: auto 4px;
+    color: #333;
+    background-color: #e6e6e6;
+    padding: 2px 6px;
+    font-size: 12px;
+    line-height: 1.5;
+
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid #b5b5b5;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.table td a.danger-btn {
+    background: #da4f49;
+    color: #fff;
+}
+
+.ui.attached.segment.content-container {
+    border-bottom-color: #fff;
+}

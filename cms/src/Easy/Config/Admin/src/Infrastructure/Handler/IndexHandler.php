@@ -11,8 +11,6 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 final class IndexHandler implements RequestHandlerInterface
 {
-    public const ROUTE_NAME = 'admin.config.index';
-
     private IndexResponder $responder;
 
     public function __construct(IndexResponder $responder)

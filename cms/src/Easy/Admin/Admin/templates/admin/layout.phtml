@@ -1,5 +1,4 @@
 <?php
-//    use AdminDashboard\Config\DashboardRoutesInterface as DashboardRoutes;
 //    use User\Config\UserRoutesInterface as UserRoutes;
 //    use Auth\Config\AuthRoutesInterface as AuthRoutes;
 //    use MultilangsManager\Config\MultilangsManagerRoutesInterface as MultilangsManagerRoutes;
@@ -20,7 +19,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="<?= $this->asset('css/admin.css') ?>">
     <?= $this->headLink(); ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -36,8 +35,8 @@
 
 <body>
     <div id="main-menu-sidebar" class="ui inverted labeled icon left inline vertical sidebar menu">
-<!--        <a class="item" href="--><?//= $this->url(DashboardRoutes::DASHBOARD_ROUTE) ?><!--">-->
-        <a class="item" href="/">
+        <a class="item" href="<?= $this->url('home') ?>">Home</a>
+        <a class="item" href="<?= $this->url('admin.dashboard.index') ?>">
             <i class="tachometer alternate icon"></i>
             Dashboard
         </a>
@@ -49,7 +48,9 @@
             <i class="sitemap icon"></i>
             Navigations
         </a>
-<!--        <a class="item" href="--><?//= $this->url(MultilangsManagerRoutes::INDEX_ROUTE) ?><!--">-->
+<!--        <a class="item" href="--><?php
+        //echo $this->url(MultilangsManagerRoutes::INDEX_ROUTE);
+        ?><!--">-->
         <a class="item" href="/">
             <i class="globe icon"></i>
             Locales

@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Laminas\ServiceManager\Factory\InvokableFactory;
+
 return [
     // Provides application-wide services.
     // We recommend using fully-qualified class names whenever possible as

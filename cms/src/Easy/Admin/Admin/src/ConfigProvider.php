@@ -11,6 +11,13 @@ class ConfigProvider
         return [
             'dependencies' => $this->getDependencies(),
             'templates' => $this->getTemplates(),
+            'view_helper_config' => [
+                'asset' => [
+                    'resource_map' => [
+                        'css/admin.css' => __DIR__ . '/../assets/css/admin.css',
+                    ],
+                ],
+            ],
         ];
     }
 
